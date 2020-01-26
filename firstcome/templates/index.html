@@ -1,0 +1,39 @@
+{% extends "_layout.html" %}
+
+{% block main_content %}
+<header class="navigation">
+    <ul>
+        <div>
+            <li><a href="/users">USERS</a></li>
+        </div>
+    </ul>
+</header>
+
+
+<div class="form-container">
+    <form action="" method="post" class="account-form container">
+        <h1>Register to FirstCome</h1>
+        <input type="text" class="form-control" name="name" placeholder=" Enter your name" value="{{ name }}">
+        <input type="text" class="form-control" name="email" placeholder=" Enter your email" value="{{ email_address }}">
+        {% if error %}
+            <div class="error-msg">
+                {{ error }}
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+
+</div>
+
+
+    <div class="user-div">
+    <h1 class="user-count">
+        Current number of users: {{ users_count }}
+    </h1>
+        </div>
+{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="static/css/register-form.css">
+    <link rel="stylesheet" href="static/css/index-file.css">
+{% endblock %}

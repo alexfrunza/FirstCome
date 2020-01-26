@@ -1,0 +1,31 @@
+{% extends '_layout.html' %}
+
+{% block title %}FirstCome (Users){% endblock %}
+
+{% block main_content %}
+    <header class="navigation">
+    <ul>
+        <div >
+            <li><a href="/">Back</a></li>
+        </div>
+    </ul>
+    </header>
+
+
+    <div class="container tabel">
+            {% set tag=users_count + 1 %}
+            {% for u in users_info %}
+                <div class="row">
+                    <div class="col-md-1 id">{{ tag - loop.index }}</div>
+                    <div class="col-md-4 name">{{u.name}}</div>
+                    <div class="col-md-7 email">{{u.email}}</div>
+                </div>
+            {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="static/css/header-css.css">
+    <link rel="stylesheet" href="static/css/users-file.css">
+{% endblock %}
